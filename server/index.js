@@ -5,6 +5,7 @@ const keys = require("./config/keys");
 
 const app = express();
 
+// Home Route Handler
 app.get("/", (req, res) => {
   res.send({ bye: "buddy" });
 });
@@ -25,6 +26,14 @@ passport.use(
     //   });
     // }
   )
+);
+
+// Google Auth Route Handler
+app.get(
+  "/auth/google",
+  passport.authenticate("google", {
+    scope: ["profile", "email"],
+  })
 );
 
 const PORT = process.env.PORT || 5000;
