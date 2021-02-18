@@ -17,14 +17,11 @@ passport.use(
       clientSecret: keys.googleClientSecret,
       callbackURL: "/auth/google/callback",
     },
-    (accessToken) => {
-      console.log(accessToken);
+    (accessToken, refreshToken, profile, done) => {
+      console.log("access token", accessToken);
+      console.log("refresh token", refreshToken);
+      console.log("profile", profile);
     }
-    // function (accessToken, refreshToken, profile, cb) {
-    //   User.findOrCreate({ googleId: profile.id }, function (err, user) {
-    //     return cb(err, user);
-    //   });
-    // }
   )
 );
 
@@ -35,6 +32,9 @@ app.get(
     scope: ["profile", "email"],
   })
 );
+
+// Google Auth Callback Route Handler
+app.get("/auth/google/callback", passport.authenticate("google"));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
