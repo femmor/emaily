@@ -1,5 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cookieSession = require("cookie-session");
+const passport = require("passport");
 const keys = require("./config/keys");
 require("./models/User");
 require("./services/passport");
@@ -10,7 +12,21 @@ mongoose.connect(keys.mongoURI, {
   useUnifiedTopology: true,
 });
 
+// Initialize express app
 const app = express();
+
+// Use Cookies
+app.use(
+  cookieSession({
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    keys: [keys.cookieKey],
+  })
+);
+
+// Initialize and use session
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Get the authRoutes
 require("./routes/authRoutes")(app);
 
