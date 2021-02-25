@@ -10,7 +10,7 @@ const Landing = () => {
         color: "orange"
       }}/>
       <h1 className="">Emaily!</h1>
-      <h5 className="">Collect feedback from your users</h5>
+      <h5 className="">Collect feedback from your users...</h5>
     </div>
   )
 }
