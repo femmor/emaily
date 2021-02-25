@@ -3,7 +3,7 @@ import React from 'react'
 const Dashboard = () => {
   return (
     <>
-      Dashboard
+      <h3>Dashboard</h3>
     </>
   )
 }
