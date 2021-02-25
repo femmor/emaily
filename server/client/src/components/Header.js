@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux"
+import { FcGoogle } from "react-icons/fc";
+import { IoLogOut } from "react-icons/io5";
 import {Link} from "react-router-dom"
 
 class Header extends Component {
@@ -7,13 +9,26 @@ class Header extends Component {
    renderContent = () => {
     switch (this.props.auth) {
       case null:
-        return "Still deciding"
+        return;
 
       case false:
-        return "I'm logged out"
+        return (
+          <li><Link to="/auth/google"><FcGoogle style={{
+            verticalAlign: 'middle',
+            width: 20,
+            height: 20,
+          }}/> Login with Google</Link></li>
+        )
     
       default:
-        return "I'm logged in"
+        return (
+          <li><Link to="/api/logout"><IoLogOut style={{
+            verticalAlign: 'middle',
+            color: "white",
+            width: 20,
+            height: 20,
+          }}/> Logout</Link></li>
+        )
     }
   }
 
@@ -26,7 +41,6 @@ class Header extends Component {
           <div className="nav-wrapper light-blue darken-4 nav-style">
             <Link to="/" className="left brand-logo">Emaily</Link>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
-            {/* <li><Link to="/auth/google">Login with Google</Link></li> */}
               {this.renderContent()}
             </ul>
           </div>
