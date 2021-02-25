@@ -6,3 +6,8 @@ body {
 .nav-style {
   padding: 0 20px;
 }
+
+.landing-container {
+  text-align: center;
+  margin: 50px auto;
+}
