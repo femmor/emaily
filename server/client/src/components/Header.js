@@ -13,21 +13,21 @@ class Header extends Component {
 
       case false:
         return (
-          <li><Link to="/auth/google"><FcGoogle style={{
+          <li><a href="/auth/google"><FcGoogle style={{
             verticalAlign: 'middle',
             width: 20,
             height: 20,
-          }}/> Login with Google</Link></li>
+          }}/> Login with Google</a></li>
         )
     
       default:
         return (
-          <li><Link to="/api/logout"><IoLogOut style={{
+          <li><a href="/api/logout"><IoLogOut style={{
             verticalAlign: 'middle',
             color: "white",
             width: 20,
             height: 20,
-          }}/> Logout</Link></li>
+          }}/> Logout</a></li>
         )
     }
   }
