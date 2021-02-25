@@ -6,6 +6,9 @@ import Dashboard from './pages/Dashboard'
 import Landing from './pages/Landing'
 
 const App = () => {
+
+  
+
   return (
     <div className="container">
       <BrowserRouter>
