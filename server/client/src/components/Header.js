@@ -23,12 +23,16 @@ class Header extends Component {
     
       default:
         return (
-          <li><a href="/api/logout"><IoLogOut style={{
-            verticalAlign: 'middle',
-            color: "white",
-            width: 20,
-            height: 20,
-          }}/> Logout</a></li>
+          <li>
+            <a href="/api/logout"><IoLogOut style={{
+              verticalAlign: 'middle',
+              color: "white",
+              width: 20,
+              height: 20,
+            }}/> 
+              Logout
+            </a>
+          </li>
         )
     }
   }
@@ -39,14 +43,17 @@ class Header extends Component {
         <nav className="">
           <div className="nav-wrapper light-blue darken-4 nav-style">
             <Link 
-            to={this.props.auth ? "/surveys" : "/"} 
-            className="left brand-logo"><FaMailBulk 
-            style={{
-              width: 30,
-              height: 30,
-              color: "orange",
-              verticalAlign: "middle"
-            }}/>emaily</Link>
+              to={this.props.auth ? "/surveys" : "/"} 
+              className="left brand-logo"><FaMailBulk 
+              style={{
+                width: 30,
+                height: 30,
+                color: "orange",
+                verticalAlign: "middle"
+              }}
+            />
+              emaily
+            </Link>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               {this.renderContent()}
             </ul>
