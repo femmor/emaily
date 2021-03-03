@@ -3,7 +3,9 @@ import { connect } from "react-redux"
 import { FcGoogle } from "react-icons/fc";
 import { FaMailBulk } from "react-icons/fa";
 import { IoLogOut } from "react-icons/io5";
+import { MdPayment } from "react-icons/md";
 import {Link} from "react-router-dom"
+import Payments from "./Payments"
 
 class Header extends Component {
    // renderContent
@@ -23,16 +25,21 @@ class Header extends Component {
     
       default:
         return (
-          <li>
-            <a href="/api/logout"><IoLogOut style={{
-              verticalAlign: 'middle',
-              color: "white",
-              width: 20,
-              height: 20,
-            }}/> 
-              Logout
-            </a>
-          </li>
+          <>
+            <li>
+              <Payments/>
+            </li>
+            <li>
+              <a href="/api/logout"><IoLogOut style={{
+                verticalAlign: 'middle',
+                color: "white",
+                width: 20,
+                height: 20,
+              }}/> 
+                Logout
+              </a>
+            </li>
+          </>
         )
     }
   }
