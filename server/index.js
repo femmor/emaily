@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const bodyParser = require('body-parser')
 const cookieSession = require("cookie-session");
 const passport = require("passport");
 const keys = require("./config/keys");
@@ -14,6 +15,9 @@ mongoose.connect(keys.mongoURI, {
 
 // Initialize express app
 const app = express();
+
+app.use(express.json())
+app.use(express.urlencoded())
 
 // Use Cookies
 app.use(
