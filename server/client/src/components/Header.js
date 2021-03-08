@@ -3,7 +3,6 @@ import { connect } from "react-redux"
 import { FcGoogle } from "react-icons/fc";
 import { FaMailBulk } from "react-icons/fa";
 import { IoLogOut } from "react-icons/io5";
-import { MdPayment } from "react-icons/md";
 import {Link} from "react-router-dom"
 import Payments from "./Payments"
 
